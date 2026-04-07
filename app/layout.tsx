@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Umut Şenel Erkek Kuaförü | Premium Grooming & Barber",
+  title: "Umut Şenel Hair Design | Premium Hair Design & Barber",
   description: "Umut Şenel ile lüks erkek bakımı. Modern saç kesimi, sakal tasarımı ve geleneksel tıraş hizmetleri.",
   icons: {
     icon: "/favicon.ico",

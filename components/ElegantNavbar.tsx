@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Scissors, Menu, X, ChevronRight } from "lucide-react";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const navLinks = [
@@ -41,33 +42,49 @@ export function ElegantNavbar() {
       <div className="w-full max-w-7xl mx-auto h-full px-6 md:px-10">
         <div className="flex items-center justify-between h-full">
 
-          {/* Logo Bölümü - Daha büyük ve etkileyici */}
+          {/* Logo Bölümü - Logo + Yazı */}
           <motion.a
             href="#home"
             style={{ scale: logoScale }}
-            className="flex items-center gap-5 group"
+            className="flex items-center gap-4 group shrink-0"
           >
-            <div className="relative">
+            <div className="relative shrink-0">
               <div className="absolute inset-0 bg-gold/20 blur-2xl rounded-full group-hover:bg-gold/30 transition-all duration-500" />
-              <div className="relative w-12 h-12 rounded-full bg-gradient-to-br from-gold/10 to-transparent border border-gold/30 flex items-center justify-center group-hover:border-gold/60 transition-all duration-500">
+              <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-gold/10 to-transparent border border-gold/30 flex items-center justify-center group-hover:border-gold/60 transition-all duration-500">
                 <Scissors
                   className="text-gold transition-all duration-500 group-hover:rotate-45 group-hover:scale-110"
-                  size={26}
+                  size={22}
                   strokeWidth={1.5}
                 />
               </div>
             </div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-serif font-bold tracking-wider text-white leading-tight">
-                UMUT <span className="text-gold">ŞENEL</span>
-              </span>
-              <span className="text-[9px] tracking-[0.3em] text-gold/60 font-light uppercase">
-                GROOMING STUDIO
-              </span>
+
+            {/* Logo Container - Sabit boyut ve taşma koruması */}
+            <div className="relative overflow-hidden shrink-0">
+              <Image
+                src="/logo.jpeg"
+                alt="Umut Şenel Logo"
+                width={120}
+                height={40}
+                className="w-auto h-[35px] md:h-[40px] object-contain"
+                priority
+              />
+            </div>
+
+            {/* Marka Yazısı - Responsive */}
+            <div className="hidden sm:block border-l border-gold/30 pl-4">
+              <div className="flex flex-col">
+                <span className="text-white font-serif text-sm md:text-base tracking-wide whitespace-nowrap">
+                  UMUT ŞENEL
+                </span>
+                <span className="text-gold/70 text-[10px] md:text-[11px] tracking-[0.2em] uppercase font-semibold whitespace-nowrap">
+                  HAIR DESIGN
+                </span>
+              </div>
             </div>
           </motion.a>
 
-          {/* Desktop Navigasyon - Daha büyük ve görkemli */}
+          {/* Desktop Navigasyon */}
           <nav className="hidden lg:flex items-center gap-12">
             {navLinks.map((link) => (
               <a
@@ -77,7 +94,7 @@ export function ElegantNavbar() {
                 className="group relative py-2"
               >
                 <span className={cn(
-                  "text-[13px] font-bold tracking-[0.25em] uppercase transition-all duration-500",
+                  "text-[13px] font-bold tracking-[0.25em] uppercase transition-all duration-500 whitespace-nowrap",
                   activeLink === link.name
                     ? "text-gold"
                     : "text-white/60 group-hover:text-white"
@@ -107,9 +124,9 @@ export function ElegantNavbar() {
             <motion.a
               href="#contact"
               style={{ scale: buttonScale }}
-              className="group relative overflow-hidden px-8 py-3.5 rounded-full bg-gradient-to-r from-gold/10 to-gold/5 border border-gold/40 hover:border-gold/80 transition-all duration-500"
+              className="group relative overflow-hidden px-8 py-3.5 rounded-full bg-gradient-to-r from-gold/10 to-gold/5 border border-gold/40 hover:border-gold/80 transition-all duration-500 shrink-0"
             >
-              <span className="relative z-10 flex items-center gap-3">
+              <span className="relative z-10 flex items-center gap-3 whitespace-nowrap">
                 <span className="text-gold text-[11px] font-black tracking-[0.2em] uppercase group-hover:text-white transition-colors duration-500">
                   RANDEVU AL
                 </span>
@@ -125,15 +142,15 @@ export function ElegantNavbar() {
             <div className="w-px h-8 bg-gold/20" />
 
             {/* Telefon Numarası */}
-            <a href="tel:+905522403705" className="text-white/40 hover:text-gold text-sm font-mono tracking-wider transition-colors duration-300">
-              +90 552 240 37 05
+            <a href="tel:+905458504460" className="text-white/40 hover:text-gold text-sm font-mono tracking-wider transition-colors duration-300 whitespace-nowrap">
+              +90 545 850 44 60
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden relative w-12 h-12 rounded-full border border-gold/30 hover:border-gold/60 hover:bg-gold/5 transition-all duration-500 group"
+            className="lg:hidden relative w-12 h-12 rounded-full border border-gold/30 hover:border-gold/60 hover:bg-gold/5 transition-all duration-500 group shrink-0"
           >
             {isOpen ? (
               <X size={22} className="text-gold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
@@ -181,7 +198,7 @@ export function ElegantNavbar() {
             <a
               href="#contact"
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center gap-8 w-full px-12 bg-gradient-to-r from-gold to-gold/80 text-dark font-black text-center tracking-[0.2em] text-sm uppercase rounded-full"
+              className="flex items-center justify-center gap-3 w-full py-4 bg-gradient-to-r from-gold to-gold/80 text-dark font-black text-center tracking-[0.2em] text-sm uppercase rounded-full"
             >
               RANDEVU AL
               <ChevronRight size={18} />
@@ -189,8 +206,8 @@ export function ElegantNavbar() {
 
             <div className="text-center">
               <p className="text-gold/40 text-[10px] tracking-[0.2em] mb-2">7/24 REZERVASYON</p>
-              <a href="tel:+905551234567" className="text-white/60 hover:text-gold text-lg font-mono tracking-wider transition-colors duration-300">
-                +90 555 123 45 67
+              <a href="tel:+905522403705" className="text-white/60 hover:text-gold text-lg font-mono tracking-wider transition-colors duration-300">
+                +90 552 240 37 05
               </a>
             </div>
           </motion.div>
@@ -209,7 +226,7 @@ export function ElegantNavbar() {
   );
 }
 
-// cn helper function (eğer yoksa)
+// cn helper function
 function cn(...classes: (string | boolean | undefined)[]) {
   return classes.filter(Boolean).join(' ');
 }

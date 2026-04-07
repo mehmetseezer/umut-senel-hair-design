@@ -1,54 +1,76 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Scissors, Palette, Sparkles, Wind, Crown, User, ArrowUpRight } from "lucide-react";
+import { Scissors, Palette, Sparkles, Wind, Crown, User, ArrowUpRight, Droplets, Leaf, Gem, Eye, Flower2, Waves } from "lucide-react";
 
 const services = [
   {
-    title: "PREMIUM SAÇ KESİMİ",
-    description: "Modern fade, klasik kesim ve kafa yapısına özel saç tasarımı. Her detayda usta dokunuşu.",
+    title: "ANATOMİK SAÇ KESİMİ",
+    description: "Kafa yapınıza ve yüz hatlarınıza özel, kişiye özel tasarlanan anatomik kesim tekniği. Doğal akışa uygun şekillendirme.",
     icon: Scissors,
-    price: "450₺",
-    duration: "45 dk",
+    duration: "60 dk",
     popular: true,
   },
   {
-    title: "SAKAL TASARIMI",
-    description: "Yüz hatlarınıza uygun, sıcak havlu destekli titiz şekilllendirme. Geleneksel yöntemlerle modern styling.",
-    icon: User,
-    price: "300₺",
-    duration: "30 dk",
-    popular: false,
-  },
-  {
-    title: "KRALİYET TIRAŞI",
-    description: "Geleneksel teknikler ve premium yağlar ile rahatlatıcı tıraş. Tamamen doğal ürünler kullanılır.",
-    icon: Sparkles,
-    price: "400₺",
-    duration: "40 dk",
-    popular: true,
-  },
-  {
-    title: "DERİN CİLT BAKIMI",
-    description: "Erkek cildine özel nemlendirici ve yenileyici lüks bakım kürleri. 3 aşamalı profesyonel uygulama.",
+    title: "SAÇ KESİMİ & FÖN",
+    description: "Modern fade, klasik kesim ve profesyonel fön uygulaması. Her detayda usta dokunuşu ve şekillendirme.",
     icon: Wind,
-    price: "500₺",
     duration: "50 dk",
     popular: false,
   },
   {
+    title: "BREZİLYA FÖNÜ",
+    description: "Hacimli ve doğal görünümlü, uzun süre kalıcı Brezilya fön tekniği. Saçlarınıza hareket ve canlılık kazandırır.",
+    icon: Waves,
+    duration: "45 dk",
+    popular: true,
+  },
+  {
+    title: "SAKAL KESİM & ŞEKİLLENDİRME",
+    description: "Yüz hatlarınıza uygun, sıcak havlu destekli titiz şekillendirme ve sakal bakımı. Geleneksel yöntemlerle modern styling.",
+    icon: User,
+    duration: "40 dk",
+    popular: false,
+  },
+  {
+    title: "SAÇ & SAKAL BAKIMI",
+    description: "Premium yağlar ve doğal ürünler ile derinlemesine saç ve sakal bakımı. Besleyici ve yenileyici kürler.",
+    icon: Leaf,
+    duration: "50 dk",
+    popular: false,
+  },
+  {
+    title: "CİLT BAKIMI & YÜZ MASKESİ",
+    description: "Erkek cildine özel, arındırıcı ve yenileyici cilt bakımı. Doğal maske uygulaması ile canlandırma.",
+    icon: Eye,
+    duration: "45 dk",
+    popular: true,
+  },
+  {
+    title: "PEELİNG & DERİN TEMİZLİK",
+    description: "Ölü derilerden arındıran, gözenekleri temizleyen profesyonel peeling uygulaması. Pürüzsüz ve canlı bir cilt için.",
+    icon: Flower2,
+    duration: "35 dk",
+    popular: false,
+  },
+  {
+    title: "PROFESYONEL SAÇ BAKIMI",
+    description: "Yıpranmış saçlar için onarıcı ve besleyici bakım kürleri. Amonyaksız premium ürünlerle yoğun bakım.",
+    icon: Droplets,
+    duration: "40 dk",
+    popular: false,
+  },
+  {
     title: "PROFESYONEL RENKLENDİRME",
-    description: "Gri kapama ve doğal görünümlü modern renklendirme seçenekleri. Amonyaksız premium boyalar.",
+    description: "Gri kapama ve doğal görünümlü modern renklendirme seçenekleri. Amonyaksız premium boyalar ile doğal sonuç.",
     icon: Palette,
-    price: "800₺",
     duration: "90 dk",
     popular: false,
   },
   {
     title: "SIGNATURE GROOMING",
-    description: "Tüm hizmetlerin bir arada olduğu, 2 saatlik özel VIP deneyimi. Özel ikramlar ve masaj dahil.",
+    description: "Tüm hizmetlerin bir arada olduğu, 2 saatlik özel VIP deneyimi. Özel ikramlar ve masaj dahil kapsamlı bakım.",
     icon: Crown,
-    price: "1200₺",
     duration: "120 dk",
     popular: true,
   },
@@ -56,11 +78,10 @@ const services = [
 
 export function MinimalServices() {
   // WhatsApp Numarası (Ülke kodu ile, başında + veya 0 olmadan)
-  const phoneNumber = "905522403705";
+  const phoneNumber = "905458504460";
 
   return (
     <section id="services" className="py-32 md:py-48 w-full bg-[#050505] overflow-hidden flex justify-center">
-      {/* Mobilde ana container padding'ini artırdık (px-6 -> px-8) */}
       <div className="w-full max-w-[1400px] px-8 md:px-12 lg:px-20">
 
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-24 md:mb-40">
@@ -96,16 +117,14 @@ export function MinimalServices() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-zinc-400 text-lg md:text-xl font-light leading-relaxed max-w-md lg:pb-4"
           >
-            Umut Şenel Grooming Studio olarak, sıradan bir saç kesimini kişisel bir bakım sanatına dönüştürüyoruz.
+            Umut Şenel Hair Design olarak, sıradan bir saç kesimini kişisel bir bakım sanatına dönüştürüyoruz.
           </motion.p>
         </div>
 
-        {/* Mobilde gap-6 ile aralarını açtık, lg'de gap-0 yapıp listeye dönüştürdük */}
         <div className="flex flex-col gap-6 lg:gap-0 lg:border-t lg:border-white/5">
           {services.map((service, index) => {
             const number = String(index + 1).padStart(2, "0");
 
-            // Dinamik WhatsApp Mesajı
             const message = encodeURIComponent(`Merhaba, ${service.title} hizmetiniz için randevu almak istiyorum.`);
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
@@ -116,8 +135,6 @@ export function MinimalServices() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                /* Mobilde: Kendi kutusu içinde geniş padding (p-8), hafif yuvarlak hatlar (rounded-3xl) ve belirgin olmayan bir arkaplan.
-                   Masaüstünde (lg): Border-bottom, sıfır padding, transparan arkaplan. */
                 className="group relative flex flex-col lg:flex-row lg:items-center justify-between p-8 sm:p-10 lg:p-0 lg:py-16 bg-white/[0.02] lg:bg-transparent rounded-3xl lg:rounded-none border border-white/5 lg:border-none lg:border-b lg:border-white/5 hover:border-[#D4AF37]/30 transition-all duration-500 overflow-hidden lg:overflow-visible"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/0 via-[#D4AF37]/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
@@ -130,7 +147,7 @@ export function MinimalServices() {
                   <div className="flex flex-col gap-3 mt-1 lg:mt-0">
                     {service.popular && (
                       <span className="text-[#D4AF37] text-[10px] font-semibold tracking-[0.2em] uppercase">
-                        Günün Tercihi
+                        Popüler
                       </span>
                     )}
                     <h3 className="text-2xl md:text-3xl font-serif font-light text-white group-hover:text-[#D4AF37] transition-colors duration-500">
@@ -151,12 +168,8 @@ export function MinimalServices() {
                       <service.icon size={14} strokeWidth={1.5} className="group-hover:text-[#D4AF37] transition-colors" />
                       <span className="text-xs font-mono tracking-widest uppercase">{service.duration}</span>
                     </div>
-                    <span className="text-3xl lg:text-4xl font-light text-white tracking-tight">
-                      {service.price}
-                    </span>
                   </div>
 
-                  {/* Butonu <a> tag'i ile değiştirdik ve WhatsApp URL'sini verdik */}
                   <a
                     href={whatsappUrl}
                     target="_blank"

@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, MapPin, Instagram, Clock, MessageCircle, Mail } from "lucide-react";
+import { Phone, MapPin, Instagram, Clock, MessageCircle } from "lucide-react";
 
 export function ContactSuite() {
-  const phoneNumber = "5324567890";
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=Merhaba Umut Bey, randevu almak istiyorum.`;
+  const phoneNumber = "+90 545 850 44 60";
+  const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=Merhaba%20Umut%20Bey,%20randevu%20almak%20istiyorum.`;
+  const instagramUrl = "https://www.instagram.com/umutsenelhairdesign/";
 
   return (
     <section id="contact" className="py-48 bg-dark border-t border-white/5 flex justify-center">
@@ -40,9 +41,8 @@ export function ContactSuite() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {[
-                { icon: MapPin, title: "ADRESİMİZ", detail: "Mustafa Kemal Mah. Maidan Plaza No: 4/15, Çankaya/Ankara" },
+                { icon: MapPin, title: "ADRESİMİZ", detail: "Orhangazi Mahallesi, Narlı Sokak No: 37, Pendik / İstanbul" },
                 { icon: Phone, title: "TELEFON HATTIMIZ", detail: phoneNumber, href: `tel:${phoneNumber}` },
-                { icon: Mail, title: "E-POSTA", detail: "hello@umutsenel.com", href: "mailto:hello@umutsenel.com" },
                 { icon: Clock, title: "ÇALIŞMA SAATLERİ", detail: "Pzt - Cmt: 09:00 - 20:00" },
               ].map((item, i) => (
                 <motion.div
@@ -82,41 +82,80 @@ export function ContactSuite() {
               </a>
               <div className="flex gap-3">
                 <a
-                  href="#"
-                  className="w-12 h-12 border border-white/10 flex items-center justify-center text-white hover:text-gold hover:border-gold transition-all duration-500 rounded-full"
+                  href={instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 border border-white/10 flex items-center justify-center text-white hover:text-gold hover:border-gold transition-all duration-500 rounded-full hover:scale-110 group"
                 >
-                  <Instagram size={20} strokeWidth={1} />
+                  <Instagram size={20} strokeWidth={1} className="group-hover:scale-110 transition-transform duration-500" />
                 </a>
                 <a
-                  href="#"
-                  className="w-12 h-12 border border-white/10 flex items-center justify-center text-white hover:text-gold hover:border-gold transition-all duration-500 rounded-full"
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 border border-white/10 flex items-center justify-center text-white hover:text-gold hover:border-gold transition-all duration-500 rounded-full hover:scale-110 group"
                 >
-                  <MessageCircle size={20} strokeWidth={1} />
+                  <MessageCircle size={20} strokeWidth={1} className="group-hover:scale-110 transition-transform duration-500" />
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Sağ Taraf - Görsel */}
+          {/* Sağ Taraf - Google Maps */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5 }}
-            className="flex-1 w-full aspect-[4/5] bg-zinc-900 border border-gold/10 rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 relative group shadow-[0_30px_90px_rgba(0,0,0,0.5)]"
+            className="flex-1 w-full"
           >
-            <div className="absolute inset-0 bg-dark/40 z-10 group-hover:opacity-0 transition-opacity duration-1000" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center z-20 pointer-events-none">
-              <div className="w-20 h-20 border border-gold/40 flex items-center justify-center text-gold bg-dark/40 backdrop-blur-md rounded-full mb-6 group-hover:scale-110 transition-transform duration-700">
-                <MapPin size={32} strokeWidth={1} className="animate-pulse" />
+            <div className="relative rounded-2xl overflow-hidden border border-gold/20 shadow-[0_30px_90px_rgba(0,0,0,0.5)] group">
+              {/* Üst overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-dark/30 z-10 pointer-events-none rounded-2xl group-hover:opacity-0 transition-opacity duration-700" />
+
+              {/* Google Maps Iframe */}
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3708.3223141076683!2d29.134639176526413!3d40.94319732342893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac682f1f108c5%3A0xfa1f4278bf6164d6!2zVW11dCDFnmVuZWwgSEHEsFIgREVTxLBHTiwgT3JoYW5nYXppLCBOYXJsxLEgU2suIE5vOjM3LCAzNDg5MCBQZW5kaWsvxLBzdGFuYnVs!5e1!3m2!1str!2str!4v1775586248928!5m2!1str!2str"
+                width="100%"
+                height="500"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-[450px] md:h-[500px] grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700"
+                title="Umut Şenel Hair Design Konumu"
+              />
+
+              {/* Merkezde konum kartı */}
+              <div className="absolute bottom-6 left-6 right-6 z-20 bg-dark/80 backdrop-blur-md border border-gold/30 rounded-xl p-4 flex items-center gap-4 group-hover:bg-dark/90 transition-all duration-500">
+                <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center shrink-0">
+                  <MapPin size={18} className="text-gold" />
+                </div>
+                <div className="flex-1">
+                  <p className="text-white text-sm font-semibold">Umut Şenel Hair Design</p>
+                  <p className="text-gold/70 text-xs">Orhangazi, Narlı Sokak No:37, Pendik</p>
+                </div>
+                <a
+                  href="https://maps.google.com/?q=Umut+Şenel+Hair+Design,Pendik"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-gold/20 hover:bg-gold text-gold hover:text-dark rounded-lg text-xs font-bold transition-all duration-300 whitespace-nowrap"
+                >
+                  Yol Tarifi
+                </a>
               </div>
-              <p className="text-gold font-black text-[11px] tracking-[0.6em] uppercase drop-shadow-2xl">BİZE GELİN</p>
             </div>
-            <img
-              src="https://images.unsplash.com/photo-1593702275677-f916c6c70ef4?q=80&w=2070&auto=format&fit=crop"
-              alt="Studio Map Location"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-2000"
-            />
+
+            {/* Harita altı bilgi metni */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="text-center text-zinc-500 text-xs mt-4"
+            >
+              Pendik sahile sadece 5 dakika yürüme mesafesinde • Ücretsiz otopark mevcuttur
+            </motion.p>
           </motion.div>
         </div>
       </div>

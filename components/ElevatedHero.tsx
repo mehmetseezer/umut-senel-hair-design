@@ -169,7 +169,7 @@ export function ElevatedHero() {
           className="text-gold font-black text-[10px] md:text-[11px] uppercase mb-8 md:mb-10 flex items-center gap-4"
         >
           <div className="h-[1px] w-8 md:w-10 bg-gold/40" />
-          EST. 2024
+          EST. 2023
           <div className="h-[1px] w-8 md:w-10 bg-gold/40" />
         </motion.div>
 
