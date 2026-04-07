@@ -66,14 +66,7 @@ const services = [
     icon: Palette,
     duration: "90 dk",
     popular: false,
-  },
-  {
-    title: "SIGNATURE GROOMING",
-    description: "Tüm hizmetlerin bir arada olduğu, 2 saatlik özel VIP deneyimi. Özel ikramlar ve masaj dahil kapsamlı bakım.",
-    icon: Crown,
-    duration: "120 dk",
-    popular: true,
-  },
+  }
 ];
 
 export function MinimalServices() {
