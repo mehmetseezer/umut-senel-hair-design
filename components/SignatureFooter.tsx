@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Scissors, Instagram, Phone, Mail, MapPin, ArrowUpRight, MessageCircle } from "lucide-react";
+import { Scissors, Instagram, Phone, MapPin, ArrowUpRight, MessageCircle } from "lucide-react";
 import Image from "next/image";
 
 export function SignatureFooter() {
@@ -91,7 +91,7 @@ export function SignatureFooter() {
         {/* Middle Section: Contact Info Bar */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 py-10 md:py-12 border-y border-white/5">
           <a
-            href="https://maps.google.com/?q=Orhangazi+Mahallesi+Narlı+Sokak+No:37+Pendik/İstanbul"
+            href="https://maps.google.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-4 group cursor-pointer transition-all hover:translate-x-1 duration-300"
@@ -119,8 +119,10 @@ export function SignatureFooter() {
           </a>
         </div>
 
-        {/* Bottom Section: Copyright & Legal */}
-        <div className="mt-10 md:mt-12 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
+        {/* Bottom Section: Copyright & Sezkon Branding */}
+        <div className="mt-10 md:mt-12 flex flex-col md:flex-row justify-between items-center gap-8">
+
+          {/* Brand & Copyright */}
           <div className="flex flex-col items-center md:items-start gap-2 text-center md:text-left">
             <div className="flex items-center gap-2 lg:gap-3 mb-2">
               <Scissors className="text-gold" size={18} />
@@ -129,7 +131,7 @@ export function SignatureFooter() {
                 alt="Umut Şenel Logo"
                 width={120}
                 height={30}
-                className="object-contain"
+                className="object-contain rounded-full"
                 priority
               />
             </div>
@@ -138,26 +140,41 @@ export function SignatureFooter() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8">
-            <a href="#" className="text-zinc-600 hover:text-white text-[9px] lg:text-[10px] tracking-[0.2em] uppercase transition-colors">Gizlilik Politikası</a>
-            <a href="#" className="text-zinc-600 hover:text-white text-[9px] lg:text-[10px] tracking-[0.2em] uppercase transition-colors">Kullanım Şartları</a>
-            <a href="#" className="text-zinc-600 hover:text-white text-[9px] lg:text-[10px] tracking-[0.2em] uppercase transition-colors">Çerez Politikası</a>
+          {/* SEZKON - Agency Credit */}
+          <div className="flex flex-col items-center gap-1 group">
+            <span className="text-zinc-700 text-[8px] tracking-[0.3em] uppercase">Digital Experience By</span>
+            <a
+              href="https://www.sezkon.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-400 hover:text-gold text-[11px] tracking-[0.5em] font-medium transition-all duration-300 flex items-center gap-1"
+            >
+              SEZKON
+              <ArrowUpRight size={10} className="opacity-0 group-hover:opacity-100 transition-all -translate-y-0.5" />
+            </a>
           </div>
 
-          {/* Minimal Social Icons for Mobile */}
-          <div className="flex gap-3 md:gap-4">
-            {socialLinks.map((item, i) => (
-              <a
-                key={i}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-7 h-7 lg:w-8 lg:h-8 rounded-full border border-white/10 flex items-center justify-center text-zinc-500 hover:text-gold hover:border-gold transition-all hover:scale-110 duration-300"
-              >
-                <item.icon size={12} />
-              </a>
-            ))}
+          {/* Legal & Social Mobile Mix */}
+          <div className="flex flex-col items-center md:items-end gap-4">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+              <a href="#" className="text-zinc-600 hover:text-white text-[9px] lg:text-[10px] tracking-[0.2em] uppercase transition-colors">Gizlilik</a>
+              <a href="#" className="text-zinc-600 hover:text-white text-[9px] lg:text-[10px] tracking-[0.2em] uppercase transition-colors">Şartlar</a>
+            </div>
+            <div className="flex gap-3">
+              {socialLinks.map((item, i) => (
+                <a
+                  key={i}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-7 h-7 rounded-full border border-white/10 flex items-center justify-center text-zinc-500 hover:text-gold hover:border-gold transition-all duration-300"
+                >
+                  <item.icon size={12} />
+                </a>
+              ))}
+            </div>
           </div>
+
         </div>
 
       </div>

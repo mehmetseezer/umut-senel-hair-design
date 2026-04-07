@@ -67,7 +67,7 @@ export function ElevatedHero() {
     }),
     center: {
       x: 0,
-      opacity: 0.25,
+      opacity: 0.75,
     },
     exit: (direction: number) => ({
       x: direction > 0 ? -100 : 100,
