@@ -115,16 +115,14 @@ export function ContactSuite() {
 
               {/* Google Maps Iframe */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3708.3223141076683!2d29.134639176526413!3d40.94319732342893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac682f1f108c5%3A0xfa1f4278bf6164d6!2zVW11dCDFnmVuZWwgSEHEsFIgREVTxLBHTiwgT3JoYW5nYXppLCBOYXJsxLEgU2suIE5vOjM3LCAzNDg5MCBQZW5kaWsvxLBzdGFuYnVs!5e1!3m2!1str!2str!4v1775586248928!5m2!1str!2str"
-                width="100%"
-                height="500"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3712.7679710508382!2d29.286758199999998!3d40.8639592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cadd0a08b286a1%3A0x1b349b0f0beb5f6d!2sUmut%C5%9EenelHairDesignkuaf%C3%B6r!5e1!3m2!1str!2str!4v1775657582217!5m2!1str!2str"
+                width="600"
+                height="450"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-[450px] md:h-[500px] grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700"
-                title="Umut Şenel Hair Design Konumu"
-              />
+              ></iframe>
 
               {/* Merkezde konum kartı */}
               <div className="absolute bottom-6 left-6 right-6 z-20 bg-dark/80 backdrop-blur-md border border-gold/30 rounded-xl p-4 flex items-center gap-4 group-hover:bg-dark/90 transition-all duration-500">
@@ -136,7 +134,7 @@ export function ContactSuite() {
                   <p className="text-gold/70 text-xs">Orhangazi, Narlı Sokak No:37, Pendik</p>
                 </div>
                 <a
-                  href="https://maps.google.com/?q=Umut+Şenel+Hair+Design,Pendik"
+                  href="https://maps.app.goo.gl/EdHMaupsCxAS3Rxo9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 bg-gold/20 hover:bg-gold text-gold hover:text-dark rounded-lg text-xs font-bold transition-all duration-300 whitespace-nowrap"
